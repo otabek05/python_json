@@ -29,14 +29,17 @@ def malumotlar_olish(response:requests.Response) -> None:
             price=product.find("div", class_="f-16").text.strip()
             installment_price=product.find("div", class_="installment-price").text.strip()
             link="https://texnomart.uz"+product.find("a", class_="product-name").get('href')
+            sale="on sale"
 
             data['title']=title
             data['price']=price
             data['installment price']=installment_price
             data['link']=link
+            data["sale"]=sale
             with open(file="product.json",mode='a',encoding="utf-8") as file:
                 json.dump( data, file, indent=3, ensure_ascii=False )
 
 malumotlar_olish(response=get_response(url=URL, headers=HEADERS))
+
 
 

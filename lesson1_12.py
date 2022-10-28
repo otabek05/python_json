@@ -2,6 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
+
 URL = "https://texnomart.uz/kr/katalog/noutbuki"
 HEADERS = {
     'accept-language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
